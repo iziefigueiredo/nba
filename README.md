@@ -23,7 +23,7 @@ nba-database/
 │── docs/
 │── src/
 │ │── data/
-│ │ │── download.py
+│ │ │── extract.py
 │ │ │── unify.py
 │ │ │── preprocess.py
 │ │ │── split.py
