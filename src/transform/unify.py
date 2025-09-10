@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 def unify_csv(
-    input_folder: Path = Path("data/raw"),
+    input_folder: Path = Path("data/raw/players"),
     output_file: Path = Path("data/interim/player_unified.csv")
 ) -> None:
     """
