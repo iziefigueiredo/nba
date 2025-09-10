@@ -1,0 +1,16 @@
+# Ignorar ambientes virtuais
+venv/
+.venv/
+
+# Ignorar dependências locais
+__pycache__/
+*.pyc
+
+# Ignorar notebooks temporários
+.ipynb_checkpoints/
+
+# Ignorar arquivos grandes de dados
+*.csv
+*.parquet
+*.db
+*.zip
