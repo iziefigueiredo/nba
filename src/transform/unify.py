@@ -67,11 +67,28 @@ class CSVUnifier:
         print(f"[SUMMARY] File: {self.output_file.resolve()}")
         print(f"[SUMMARY] Rows: {len(df)} | Columns: {len(df.columns)}")
 
+    
+    def save_stats(self, df: pd.DataFrame) -> None:
+        reports_dir = Path("reports")
+        reports_dir.mkdir(parents=True, exist_ok=True)
+
+        stats_file = reports_dir / "unify_report.txt"
+        with open(stats_file, "w") as f:
+            f.write(f"Rows: {len(df)}\n")
+            f.write(f"Columns: {len(df.columns)}\n")
+            f.write(f"Files merged: {len(self.csv_files)}\n")
+            f.write(f"Errors: {self.error_count}\n")
+
+        print(f"[INFO] Stats file saved at {stats_file.resolve()}")
+
+    
+
     def run(self) -> None:
         print("[INFO] Starting CSV unification process")
         self.discover_files()
         self.read_csvs()
         df_final = self.unify()
+        self.save_stats(df_final)
         self.save(df_final)
 
 

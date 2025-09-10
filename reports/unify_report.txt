@@ -1,0 +1,4 @@
+Rows: 440934
+Columns: 39
+Files merged: 210
+Errors: 0
